@@ -1,0 +1,16 @@
+.containergetstar{
+    background-color: #fff;
+    color: black;
+}
+#celestial-form input,#celestial-form select,#celestial-form option,#celestial-form label{
+    color: black;
+}
+
+.starmap_box_circle1{
+    position: initial;
+}
+
+.starmap_box_circle1 canvas{
+    position: unset;
+}
+
