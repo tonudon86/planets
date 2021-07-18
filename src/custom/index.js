@@ -332,7 +332,7 @@ async function checkout(){
                 <p className="placeofmap" style={ImageCount>7?{color:'white' }:{ color:'black'}}>{info.place}</p>
           </div>
         </div>
-     
+        
 
         <div className="starmapping-rects">
         
