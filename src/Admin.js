@@ -54,7 +54,7 @@ function Admin(porps) {
         <Hadmin />
         <div >
             <h1>orders</h1>
-        <table class="table">
+        <table className="table">
   <thead>
     <tr>
       <th scope="col">user id</th>

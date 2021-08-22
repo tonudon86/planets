@@ -24,7 +24,7 @@ function Account(porps) {
     return (
        <>
        <Header />
-       <button type="button" class="btn btn-info mx-5">Logout</button>
+       <button type="button" className="btn btn-info mx-5">Logout</button>
             <div >
             <p  className="text-center my-10 mx-10" style ={tonu}> you havn't order yet</p>
             
