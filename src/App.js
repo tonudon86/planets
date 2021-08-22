@@ -19,7 +19,7 @@ import AdminCustom from './admin_custom'
 import Terms from './terms/Terms';
 import Cookies from './terms/Cookies';
 import GetStar from './admin/getstar';
-
+import Planets from './planets/Planets';
 const checktoken=()=>{
 
   if(localStorage.getItem("auth")){
@@ -77,6 +77,7 @@ const ProtectedRouter=({component:Component,...rest})=>(
                 <Route path="/checkout" component={Checkout}  exact/>
                 <Route path="/register" component={Register} exact />
                 <Route path="/privacy" component={Privacy} exact />
+                <Route path="/planets" component={Planets} exact />
                 <ProtectedRouter path="/admin" component={Admin} exact />
                 <ProtectedRouter path="/getstar" component={GetStar} exact />
                 <ProtectedRouter path="/admincustomization" component={CustomAdmin} exact />

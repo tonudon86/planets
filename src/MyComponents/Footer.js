@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 function Footer() {
     return (
@@ -19,12 +20,12 @@ function Footer() {
 			<h3 class="footer-heading">Important Information</h3>
 			<span><img src="/img/Rectangle 33.png" alt="" class="imp-span"/></span>
 			<ul className="bitch">
-			<a href="/contact"><li class="imp-pages">Contact</li> </a>
-			<a href="/work"><li class="imp-pages">How it works</li> </a>
-			<a href="/privacy"><li class="imp-pages">Privacy Policy</li></a>
-			<a href="/cookies"><li class="imp-pages">Cookie Policy</li></a>
-			<a href="/terms"><li class="imp-pages"> Terms and Condition</li></a>
-			<a href="/return"><li class="imp-pages">Return & Cancellation</li></a>
+			<Link to="/contact"><li class="imp-pages">Contact</li> </Link>
+			<Link to="/work"><li class="imp-pages">How it works</li> </Link>
+			<Link to="/privacy"><li class="imp-pages">Privacy Policy</li></Link>
+			<Link to="/cookies"><li class="imp-pages">Cookie Policy</li></Link>
+			<Link to="/terms"><li class="imp-pages"> Terms and Condition</li></Link>
+			<Link to="/return"><li class="imp-pages">Return & Cancellation</li></Link>
 			</ul>
 		</div>
 		<div class="footer-payment-option">
@@ -39,12 +40,12 @@ function Footer() {
 				
 				<img src="/img/visa.svg" alt="" class="small-payment-option"/>
 				<img src="/img/mastercard.svg" alt="" class="small-payment-option"/>
-				<img src="/img/american.svg" alt="" class="small-payment-option"/>
+				<img src="/img/Linkmerican.svg" alt="" class="small-payment-option"/>
 				<img src="/img/stripe.svg" alt="" class="small-payment-option"/>
 				<img src="/img/paypalsmall.svg" alt="" class="small-payment-option"/>
 			</div>
 		</div>
-		{/* <h1 style={{color:"black"}}>Developed by <a href=""> Cretmark</a></h1> */}
+		{/* <h1 style={{color:"black"}}>Developed by <Link to=""> Cretmark</Link></h1> */}
 	</footer>
 
         </div>

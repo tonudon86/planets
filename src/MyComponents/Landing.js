@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 import {useState} from 'react';
 import axios from 'axios';
 function Landing() {
@@ -31,7 +32,7 @@ function Landing() {
    <>
    <div className= "noob-bg">
    	<div className="fixed-button">
- 	<button className="get-your-starmap-here"> <a href="/customization">GET YOUR STARMAP </a></button> 
+ 	<button className="get-your-starmap-here"> <Link to="/customization">GET YOUR STARMAP </Link></button> 
 </div>
 
    <section id="moonlight-section" >
@@ -45,7 +46,7 @@ function Landing() {
 			{/* <h2 id="text">Capture Your Cherished <br/> Memories in a Frame</h2> */}
 			<h4 class="home-page-h-four">Capture Your Cherished Memories in a Frame</h4>
 
-			<button class="home-btnn" id="map"><a href="/customization">GET YOUR STARMAP</a></button>
+			<button class="home-btnn" id="map"><Link to="/customization">GET YOUR STARMAP</Link></button>
 		</div>
 		
 	</section>

@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types';
 import logo from '../MyComponents/1.jpg';
+import { Link } from 'react-router-dom';
  
 const propTypes={
     home:PropTypes.bool,
@@ -20,38 +21,38 @@ function Header(props) {
         <div   >
      <nav className="navbar navbar-expand-lg navbar-dark"   >
         <div className="container-fluid">
-          <a className="navbar-brand manish2" href="/"> <img  src="/img/navlogo.svg" alt=""/></a>
+          <Link className="navbar-brand manish2" to="/"> <img  src="/img/navlogo.svg" alt=""/></Link>
           <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"></span>
           </button>
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav ms-auto mb-2 mb-lg-0 manish">
               <li className="nav-item">
-                {props.home ?  <a  className="nav-link active" aria-current="page" href="/">HOME</a> : <a  className="nav-link" aria-current="page" href="/">HOME</a> }   
+                {props.home ?  <Link  className="nav-link active" aria-current="page" to="/">HOME</Link> : <Link  className="nav-link" aria-current="page" to="/">HOME</Link> }   
               </li>
               <li className="nav-item">
-                  {props.work?  <a className="nav-link active" href="/work">HOW IT WORKS</a> :  <a className="nav-link" href="/work">HOW IT WORKS</a> }
+                  {props.work?  <Link className="nav-link active" to="/work">HOW IT WORKS</Link> :  <Link className="nav-link" to="/work">HOW IT WORKS</Link> }
                
               </li>
               <li className="nav-item">
-               {props.contact?  <a className="nav-link active" href="/contact">CONTACT</a>: <a className="nav-link" href="/contact">CONTACT</a>}
+               {props.contact?  <Link className="nav-link active" to="/contact">CONTACT</Link>: <Link className="nav-link" to="/contact">CONTACT</Link>}
               </li>
               {/* <li className="nav-item">
-              {props.account?  <a className="nav-link active" href="/login">MY ACCOUNT</a>:   <a className="nav-link" href="/login">MY ACCOUNT</a>}
+              {props.account?  <Link className="nav-link active" to="/login">MY ACCOUNT</Link>:   <Link className="nav-link" to="/login">MY ACCOUNT</Link>}
               </li> */}
               {/* <li className="nav-item dropdown">
-                <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <Link className="nav-link dropdown-toggle" to="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                   Dropdown
-                </a>
+                </Link>
                 <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <li><a className="dropdown-item" href="#">Action</a></li>
-                  <li><a className="dropdown-item" href="#">Another action</a></li>
+                  <li><Link className="dropdown-item" to="#">Action</Link></li>
+                  <li><Link className="dropdown-item" to="#">Another action</Link></li>
                   <li><hr className="dropdown-divider"/></li>
-                  <li><a className="dropdown-item" href="#">Something else here</a></li>
+                  <li><Link className="dropdown-item" to="#">Something else here</Link></li>
                 </ul>
               </li>
               <li className="nav-item">
-                <a className="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                <Link className="nav-link disabled" to="#" tabindex="-1" aria-disabled="true">Disabled</Link>
               </li> */}
             </ul>
       
