@@ -1,5 +1,4 @@
-import axios from 'axios'
-import React,{useState,useEffect} from 'react'
+  import React,{useEffect} from 'react'
 import Header from './MyComponents/Header'
 
 function Account(porps) {
@@ -7,7 +6,7 @@ function Account(porps) {
         color: "white",
         padding:"100px"
     }
-    const [Data, setData] = useState({})
+ 
 
     useEffect(()=>{
 
@@ -24,7 +23,7 @@ function Account(porps) {
     return (
        <>
        <Header />
-       <button type="button" className="btn btn-info mx-5">Logout</button>
+       <button type="button" class="btn btn-info mx-5">Logout</button>
             <div >
             <p  className="text-center my-10 mx-10" style ={tonu}> you havn't order yet</p>
             

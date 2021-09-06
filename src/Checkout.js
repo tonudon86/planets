@@ -135,7 +135,7 @@ React.useEffect(()=>{
         <div  className="contact-page">
             <div  className="img-form">
                 <div  className="contact-img coco-info">
-                    <h1 className="text-center" style={tonu}>Order Preview</h1>
+                    {/* <h1 className="text-center" style={tonu}>Order Preview</h1> */}
                     <img className="preiew co-img" src={`${image}`}alt=""/>
                 </div>
                 <div  className="contact-form coco-info">
@@ -157,7 +157,9 @@ React.useEffect(()=>{
             </div>
 
         </div>
-    </section>    
+    </section>   
+
+    <Footer/> 
         </div>
 
         

@@ -2,13 +2,14 @@
 import './App.css';
  
 import Home from './Home';
-import { BrowserRouter, Route, Switch,Redirect } from 'react-router-dom';
+import {  Route, Switch } from 'react-router-dom';
 import Contact from './Contact';
 import Login from './Login';
 import Work from './Work';
 import Error from './Error';
 import Register from './Register';
-import Account from './Account';
+ import Checkout2 from './checkout/Checkout2';
+ 
 import Admin from './Admin'
 import Checkout from './Checkout';
 import Custom from './custom/index'
@@ -75,6 +76,7 @@ const ProtectedRouter=({component:Component,...rest})=>(
                 <Route path="/terms" component={Terms}  exact/>
                 <Route path="/cookies" component={Cookies}  exact/>
                 <Route path="/checkout" component={Checkout}  exact/>
+                <Route path="/checkout2" component={Checkout2}  exact/>
                 <Route path="/register" component={Register} exact />
                 <Route path="/privacy" component={Privacy} exact />
                 <Route path="/planets" component={Planets} exact />

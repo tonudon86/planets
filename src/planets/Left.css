@@ -6,14 +6,13 @@ div h1 {
     color: black;
 }
 
-.right .left {
-    height: 100vh;
+.right  {
+    height: 100%;
 }
 
 .left {
-    background-image: url(./byron-johnson-yl-elIjiDvU-unsplash.jpg);
-    background-repeat: no-repeat;
-    background-size: 900px 1200px;
+   
+    background-color: rgb(225, 225, 237);
     height: 100vh;
 
 }
@@ -21,12 +20,76 @@ div h1 {
  color: black;
 }
 
-.noob  {
-    height: 100vh;
-}
+ 
 .accordion {
     color: black;
 }
 .accordion-body,.accordion-body strong {
     color: black;
+}
+
+
+@media only screen and (max-width: 400px) {
+    .left , .right {
+      height: 40vh;
+    }
+  
+  }
+  
+
+  .inpdate{
+      justify-content: center;
+      align-items: center;
+      color: black;
+    width: 100%;
+      /* background-color: #8F00FF; */
+  }
+
+  .inplabel{
+      color:black;
+      font-size: large;
+      font-weight: 300;
+  }
+
+
+.accordion-body input {
+      margin: 3px;
+  }
+
+  .centerall{
+      /* margin: 0px 10%; */
+  }
+
+  #palnetbtn{
+      justify-content: center;
+      align-items: center;
+      margin-top: 100px;
+      margin-left: 200px;
+  }
+
+  @media only screen and (max-width: 400px) { 
+    #palnetbtn{
+        justify-content: center;
+        align-items: center;
+        margin-top: 40px;
+        margin-left: 0px;
+    }
+  
+  }
+
+
+ .mainj{
+     font-size: 30px;
+     font-weight: 400;
+     margin-bottom: 10px;
+ } 
+
+ input{
+    height: 43px;
+    padding: 10px;
+}
+ 
+
+.accordion-button{
+    
 }

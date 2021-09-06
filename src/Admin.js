@@ -3,10 +3,7 @@ import React,{useState,useEffect} from 'react'
  import Hadmin from './admin/Hadmin'
 
 function Admin(porps) {
-    const tonu ={
-        color: "white",
-        padding:"100px"
-    }
+  
     const [Data, setData] = useState([])
 
     useEffect(()=>{
@@ -54,7 +51,7 @@ function Admin(porps) {
         <Hadmin />
         <div >
             <h1>orders</h1>
-        <table className="table">
+        <table class="table">
   <thead>
     <tr>
       <th scope="col">user id</th>
