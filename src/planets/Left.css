@@ -1,9 +1,9 @@
 .noob {
-    background-color: white;
+    background-color: black;
    
 }
 div h1 {
-    color: black;
+    color: white;
 }
 
 .right  {
@@ -12,8 +12,8 @@ div h1 {
 
 .left {
    
-    background-color: rgb(225, 225, 237);
-    height: 100vh;
+    background-color: #000000;
+    height: 90vh;
 
 }
 .right {
@@ -22,12 +22,21 @@ div h1 {
 
  
 .accordion {
-    color: black;
+    color: white;
+    
+    background-color: #000000;
 }
-.accordion-body,.accordion-body strong {
-    color: black;
+.accordion-body,.accordion-item,.accordion-body strong,.accordion-button ,.accordion-button:not(.collapsed)  {
+    color: white;
+    
+    background-color: #000000;
 }
-
+.img-responsive{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
 @media only screen and (max-width: 400px) {
     .left , .right {
@@ -61,10 +70,15 @@ div h1 {
   }
 
   #palnetbtn{
+      display: flex;
       justify-content: center;
       align-items: center;
-      margin-top: 100px;
-      margin-left: 200px;
+      margin-top: 10px;
+      width: 100%     
+  }
+  form{
+      /* display: flex; */
+      width: 100%;
   }
 
   @media only screen and (max-width: 400px) { 
@@ -93,3 +107,32 @@ div h1 {
 .accordion-button{
     
 }
+.left{
+    display: flex;
+    justify-content: center;
+    align-items:center;
+}
+.imagebox{
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    flex-wrap: wrap;
+}
+.imagebox img{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 5px 10px;
+    border-radius: 20px;
+    border: 5px solid ;
+    border-color: black
+    
+}
+@media only screen and (max-width: 400px) { 
+    .imagebox img{
+        margin: 0px;
+    }
+ }
+ .right{
+    /* overflow-y: scroll; */
+ }

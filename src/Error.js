@@ -9,7 +9,7 @@ function Error() {
       
    
  
-      <div class="info text-center">
+      <div className="info text-center">
       <h1>404</h1>
         <h2>We can't find that page</h2>
         <p>

@@ -1,7 +1,7 @@
-import React from 'react'
+import React ,{useState,useEffect}from 'react'
 import PropTypes from 'prop-types';
 import logo from '../MyComponents/1.jpg';
-import { Link } from 'react-router-dom';
+import { Link,useLocation } from 'react-router-dom';
  
 const propTypes={
     home:PropTypes.bool,
@@ -17,9 +17,21 @@ const defaultProps = {
 };
 
 function Header(props) {
+  const location=useLocation()
+  console.log(location.pathname)
+ const [url, seturl] = useState("")
+ useEffect(() => {
+  if(location.pathname =='/'){
+    seturl("/home.jpg")
+  }
+   else{
+     seturl('')
+   }
+ }, [])
+  
     return (
         <div   >
-     <nav className="navbar navbar-expand-lg navbar-dark"   >
+     <nav  style={{backgroundImage: `url(${url})`}} className="navbar navbar-expand-lg navbar-dark"   >
         <div className="container-fluid">
           <Link className="navbar-brand manish2" to="/"> <img  src="/img/navlogo.svg" alt=""/></Link>
           <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">

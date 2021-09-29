@@ -9,6 +9,8 @@
     "axios": "^0.21.1",
     "html2canvas": "^1.0.0-rc.7",
     "react": "^17.0.2",
+    "react-alert": "^7.0.3",
+    "react-alert-template-basic": "^1.0.2",
     "react-dom": "^17.0.2",
     "react-geocode": "^0.2.3",
     "react-places-autocomplete": "^7.3.0",
@@ -40,5 +42,6 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "proxy": "http://127.0.0.1:5000"
 }

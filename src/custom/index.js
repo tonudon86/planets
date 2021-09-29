@@ -1,13 +1,15 @@
-import React from 'react';
+import React,{useEffect} from 'react';
 import ScriptTag from 'react-script-tag';
 import Location from './Location';
 import './custom.css';
+import { useHistory } from 'react-router';
+ import Preloader from './Preloader';
 import Header from '../MyComponents/Header';
 import { useState } from 'react';
 
 import html2canvas from 'html2canvas';
-
-import { useEffect } from 'react';
+ 
+import Spinner from '../MyComponents/Spinner';
 
 
 const Demo =({Data})=>{ 
@@ -51,22 +53,41 @@ else{
 
 function Custom(props) {
 
+  // const [loading, setloading] = useState(true)
+  
+  // setTimeout(() => {
+  //   setloading(false)
+  // }, 4000);
 
 
 const [Image, setImage] = React.useState([
- "/background/Star_Map_Bird_Blue.png",
- "/background/Star_Map_Bird_Pink.png",
- "/background/Star_Map_Boy_Face_Web.png",
- "/background/Star_Map_Girl_Face_web.png",
- "/background/Star_Map_Heart_white_web.png",
- "/background/Star_Map_Star_web.png",
- "/background/Star_Map_Vine_web.png",
- "/background/Star_Map_Heart_Full_web.png",
- "/background/Star_Map_Planet_Line_web.png",
- "/background/Star_Map_Heart_Black_web.png",
+ {size:'small',image:'/backImage/1small.jpg'},
+ {size:'big',image:'/backImage/1big.jpg'},
+ {size:'small',image:'/backImage/2small.jpg'},
+ {size:'big',image:'/backImage/2big.jpg'},
+ {size:'small',image:'/backImage/3small.jpg'},
+ {size:'big',image:'/backImage/3big.jpg'},
+ {size:'small',image:'/backImage/4small.jpg'},
+ {size:'big',image:'/backImage/4big.jpg'},
+ {size:'small',image:'/backImage/5small.jpg'},
+ {size:'big',image:'/backImage/5big.jpg'},
+ {size:'small',image:'/backImage/6small.jpg'},
+ {size:'big',image:'/backImage/6big.jpg'},
+ {size:'small',image:'/backImage/7small.jpg'},
+ {size:'big',image:'/backImage/7big.jpg'},
+ {size:'small',image:'/backImage/8small.jpg'},
+ {size:'big',image:'/backImage/8big.jpg'},
+ {size:'small',image:'/backImage/9small.jpg'},
+ {size:'big',image:'/backImage/9big.jpg'},
+{size:'small',image:'/backImage/10small.jpg'},
+{size:'big',image:'/backImage/10big.jpg'},
+
 ])
 
+// {size:'small',image:'/backImage/11small.jpg'},
+// {size:'big',image:'/backImage/11big.jpg'},
 
+// "/background/logo/11logo.svg",
 const [Logo, setLogo] = React.useState([
   "/background/logo/1logo.svg",
   "/background/logo/2logo.svg",
@@ -78,7 +99,9 @@ const [Logo, setLogo] = React.useState([
   "/background/logo/8logo.svg",
   "/background/logo/9logo.svg",
   "/background/logo/10logo.svg",
+
  ])
+ const [selectedImage,setSelectedImage]=React.useState(0)
 
 const ref=React.createRef()
 
@@ -152,16 +175,16 @@ const lat_lng=(lat,lng,address)=>{
 }
 
 React.useEffect(()=>{
-    let element=document.getElementById("celestial-form")
-    let container=document.getElementById("celestial-map")
-    if(element!==null)
-    {
-      // element.innerHTML=''
-      element.style.display='none';
-      container.style.width='fit-content'
-      container.style.height='fit-content' 
-    }
-    return () => {}
+    // let element=document.getElementById("celestial-form")
+    // let container=document.getElementById("celestial-map")
+    // if(element!==null)
+    // {
+    //   // element.innerHTML=''
+    //   element.style.display='none';
+    //   container.style.width='fit-content'
+    //   container.style.height='fit-content' 
+    // }
+    // return () => {}
   }, [ImageCount,Body,info,Image,Data])
 
 
@@ -182,7 +205,7 @@ React.useEffect(()=>{
     return(
     <>
        <h1 style={{color:"black"}} className="rects-heading-custom text-center">Select your favourite design :</h1>
-    <div className="ImageContainer">{Logo.map((e,index)=><img src={e} key={index} onClick={()=>setImageCount(index)} className="select-single-frame"/>)}</div>
+    <div className="ImageContainer">{Logo.map((e,index)=><img src={e} key={index} onClick={()=>{setSelectedImage(index);loaderClick();setImageCount(()=>{return index*2>22?(index-1)*2:index*2})}} className="select-single-frame"/>)}</div>
     
     </>
     )
@@ -191,9 +214,12 @@ React.useEffect(()=>{
 function Info()
 {
   const [infodemo, setinfodemo] = React.useState(info)
+
   return(
   <>
-         <h5 style={{color:"black"}} className="rects-heading-custom text-center">Add title and footnote to make it really personal :
+   
+      
+<h5 style={{color:"black"}} className="rects-heading-custom text-center">Add title and footnote to make it really personal :
 </h5>
     <div className="infobody">
       <label className="gadhi" style={{color:'black' ,fontSize:"15px"}}>Title</label>
@@ -222,11 +248,14 @@ function Info()
 
     
       <label className="gadhi"  style={{color:'black',fontSize:"15px"}}>Custom Line Footer</label>
-      <input style={{color:'black'}} type="text" className="custext" name="message"  maxlength = "50" onChange={(e)=>setinfodemo((pre)=>({...pre,message:e.target.value}))} placeholder="custom line one   "/>
-      <input style={{color:'black'}} type="text" className="custext" name="custom"  maxlength = "40" onChange={(e)=>setinfodemo((pre)=>({...pre,custom:e.target.value}))} placeholder=" custom line two  "/>
+      <input style={{color:'black'}} type="text" className="custext" name="message"  maxlength = "50" onChange={(e)=>setinfodemo((pre)=>({...pre,message:e.target.value}))} placeholder="custom line one   " required/>
+      <input style={{color:'black'}} type="text" className="custext" name="custom"  maxlength = "40" onChange={(e)=>setinfodemo((pre)=>({...pre,custom:e.target.value}))} placeholder=" custom line two  " required/>
      
       <button className="" onClick={()=>setinfo((e)=>({...infodemo}))}>Update name</button>
     </div>
+    
+ 
+ 
   </>
   )
 }
@@ -238,8 +267,8 @@ function SizeBody()
   <> <div className="container text-center">
     <h1 style={{color:'black'}} >Size is here!</h1>
  
- <button className="  size-button " style={info.price=='1800'?{backgroundColor:'#8f00ff',color:'white'}:{}}  onClick={()=>setinfo((e)=>({...e,price:"1800"}))}>A-3 (11.75 x 16.5)inch  <del>3000</del> 1800 INR    </button>
- <button className="  size-button " style={info.price=='1500'?{backgroundColor:'#8f00ff',color:'white'}:{}} onClick={()=>setinfo((e)=>({...e,price:"1500"}))}>A-4 (8.25 x 11.75) inch <del>2500</del>  1500 INR </button>   
+ <button className="  size-button " style={info.price=='1999'?{backgroundColor:'#8f00ff',color:'white'}:{}}  onClick={()=>{setinfo((e)=>({...e,price:"1999"}));Image[ImageCount].size=='big'?setImageCount(ImageCount-1):setImageCount(ImageCount)}}>A4 10x10 inch  <del>2499</del> 1999 INR    </button>
+ <button className="  size-button " style={info.price=='2499'?{backgroundColor:'#8f00ff',color:'white'}:{}} onClick={()=>{setinfo((e)=>({...e,price:"2499"}));Image[ImageCount].size=='small'?setImageCount(ImageCount+1):setImageCount(ImageCount)}}>A3 15x15 inch <del>2999</del>  2499 INR </button>   
 
  {/* <button  className=" size-button">12 x 16 inch                    (30 x 40 cm)                    $69 $49</button> */}
  
@@ -269,7 +298,7 @@ function LocationText(){
       style={{color:"black"}}
        value={infodemo.place}
        onChange={(e)=>setinfodemo((pre)=>({...pre,place:e.target.value}))}
-       defaultValue="2021-08-01"/>
+       defaultValue="2021-08-01" required/>
       <button onClick={()=>setinfo(infodemo)}>Update</button>
     </div>
   </>
@@ -299,38 +328,52 @@ function CustomeBody(){
 
 async function checkout(){
 
-    let image=await document.getElementById("starmap_box");
-  await html2canvas(image).then(canvas => 
-    {
-      localStorage.setItem("images",canvas.toDataURL())
-    
-    }
-  )
-  
+   
   setTimeout(()=>{
-    localStorage.setItem("StarMap",JSON.stringify({...info,ImageCount}))
-    window.location.href='/checkout'
+    localStorage.setItem("StarMap",JSON.stringify({...info,selectedImage}))
+    
   },)
-
+  history.push('/checkout2')
 }
 
+const [loading, setloading] = useState(true)
+useEffect(() => {
+  setTimeout(() => {
+    setloading(false)
+   }, 2000);
+    
+}, [])
+ 
+ 
+const [loadernew, setLoadernew] = useState(true)
+  const history=useHistory()
 
+  const loaderClick=() => {
+    setLoadernew(false)
+    setTimeout(() => {
+        setLoadernew(true)
+    }, 1000);
+  }
   return (
     <>
-    <Header/>
-   
-   <section className="customise">
-        <div className="starmapping-frame mapcontainer">
-          <div className="starmap_box" id="starmap_box" ref={ref}>
-            <img src={`${Image[ImageCount]}`}/>
-                <div className="starmap_box_circle" id="celestial-map" style={{width:'fit-content',height:'fit-content'}} ></div>
-                <p className="titleofmap" style={ImageCount>7?{color:'white'}:{color:'black'}}>{info.heading}</p>
-                <p className="msgofmap" style={ImageCount>7?{color:'white' }:{color:'black'}}>{info.message}</p>
-                <p className="msgofmap2" style={ImageCount>7?{color:'white' }:{color:'black'}}> {info.custom}  </p>
-                <p className="starover" style={ImageCount>7?{color:'white' }:{ color:'black'}}> star over</p>
-                <p className="locationofmap" style={ImageCount>7?{color:'white' }:{ color:'black'}}>{info.location +" "+ info.lat +" "+ info.log}</p>
-                <p className="placeofmap" style={ImageCount>7?{color:'white' }:{ color:'black'}}>{info.place}</p>
-          </div>
+ 
+
+
+  <div> 
+ 
+
+{/* style={{backgroundImage: `url(${Image[ImageCount].image})`}} */}
+
+{loading==true? <Spinner/> :
+<>
+<Header/>
+<section className="customise">
+        <div className="starmapping-frame mapcontainer" >
+        {/* <div id="loading"></div> */}
+        {loadernew===true?
+               <img id="newImage"   src={`${Image[ImageCount].image}`}/>:<img src="./planetsImage/2.gif" alt="loader" />
+      }
+     
         </div>
         
 
@@ -359,9 +402,12 @@ async function checkout(){
           </div>
 
         </div>
-        <Demo Data={Data}/>
     </section>
-
+ 
+ </>}
+   
+  </div>
+ 
   </>
   );
 }

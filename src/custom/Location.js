@@ -30,7 +30,7 @@ export default function Location({lat_lng}) {
 
     return (
         <>
-          <input style={{color:"black"}} type="text" placeholder="city" onChange={(e)=>setaddress(e.target.value)}/>
+          <input id="locationinput" style={{color:"black"}} type="text" placeholder="city" onChange={(e)=>setaddress(e.target.value)}/>
           <button onClick={()=>getlocation()}>Change location</button>
 
         </>

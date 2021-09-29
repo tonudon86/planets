@@ -1154,7 +1154,7 @@ footer{
 }
 
 .starmapping-frame{
-  background: url('http://localhost:3000/background/backimage.png');
+  background: url('background/backimage.png');
   background-size: cover;
 width: 50%;
 background-repeat: no-repeat;

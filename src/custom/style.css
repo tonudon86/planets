@@ -24,6 +24,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+ 
 
 }
 #moonlight-section::before{
@@ -1152,7 +1153,7 @@ footer{
 }
 
 .starmapping-frame{
-  background: url('http://localhost:3000/background/background-starmap');
+  background: url('/background/background-starmap');
   background-size: cover;
 width: 50%;
 background-repeat: no-repeat;

@@ -18,3 +18,12 @@ flex-direction: column;
  .preview strong {
      font-size: 30px;
  }
+ h6{
+     color: black;
+ }
+ small{
+     color: black
+ }
+ .list-group-item span,.list-group-item strong {
+     color: black;
+ }
